@@ -32,11 +32,7 @@ router.post("/", async (req, res) => {
 router.put("/:userID", async (req, res) => {
   const { coure, nameUser, createTime, status } = req.body;
   const { userID } = req.params;
-  let date = new Date(createTime);
-  createTime = date.toISOString().slice(0, 19).replace("T", " ");
-  console.log("đây là name", req.body);
-  console.log("đây là id :", userID);
-  console.log(nameUser);
+
   try {
     await db.query(
       "UPDATE taskkeeper SET coure = ?, nameUser = ?, createTime = ?, status = ? WHERE userID = ?",
@@ -44,7 +40,6 @@ router.put("/:userID", async (req, res) => {
     );
 
     res.status(200).send("Đã cập nhật task");
-    console.log("update chưa ????");
   } catch (error) {
     console.log(error);
     res.status(500).send("Database update error");
