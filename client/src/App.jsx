@@ -35,21 +35,54 @@ const App = () => {
         layout="inline"
         onFinish={onFinish}
       >
-        <Form.Item name="coure">
+        <Form.Item
+          name="coure"
+          rules={[
+            {
+              required: true,
+              message: "Please enter the course",
+            },
+          ]}
+        >
           <Input />
         </Form.Item>
 
-        <Form.Item name="createTime">
+        <Form.Item
+          name="createTime"
+          rules={[
+            {
+              required: true,
+              message: "Please enter the course",
+            },
+          ]}
+        >
           <DatePicker />
         </Form.Item>
-        <Form.Item name="status" label="Select">
-          <Select placeholder="Select an option">
+        <Form.Item
+          name="status"
+          label="Select"
+          rules={[
+            {
+              required: true,
+              message: "Please enter the course",
+            },
+          ]}
+        >
+          <Select placeholder="Select an option" style={{ width: 200 }}>
             <Select.Option value="pending">Pending</Select.Option>
             <Select.Option value="fulfill">Fulfill</Select.Option>
             <Select.Option value="reject">Reject</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item name="nameUser">
+        <Form.Item
+          name="nameUser"
+          rules={[
+            {
+              required: true,
+              message: "Please enter the course",
+            },
+          ]}
+        >
           <Input />
         </Form.Item>
         <Form.Item>
